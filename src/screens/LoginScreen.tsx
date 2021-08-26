@@ -35,15 +35,15 @@ export const LoginScreen = ({ navigation } : Props) => {
                     {/** Keyboard avoid view */}
                     <WhiteLogo/> 
 
-                    <Text style={ loginStyles.title }>Login</Text>
+                    {/*<Text style={ loginStyles.title }>Login</Text>
 
-                    <Text style={ loginStyles.label }>Email</Text>
+                    <Text style={ loginStyles.label }>Email</Text>*/}
 
                     <TextInput
                         placeholder="Correo"
-                        placeholderTextColor="rgba(255,255,255,0.4)"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
                         keyboardType="email-address"
-                        underlineColorAndroid="white"
+                        underlineColorAndroid="#707070"
                         style={[
                             loginStyles.inputField,
                             ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
@@ -57,12 +57,12 @@ export const LoginScreen = ({ navigation } : Props) => {
                         autoCorrect={ false }
                     />
 
-                    <Text style={ loginStyles.label }>Contraseña</Text>
+                    {/*<Text style={ loginStyles.label }>Contraseña</Text>*/}
 
                     <TextInput
                         placeholder="Contraseña"
-                        placeholderTextColor="rgba(255,255,255,0.4)"
-                        underlineColorAndroid="white"
+                        placeholderTextColor="rgba(112,112,112,0.4)"
+                        underlineColorAndroid="#707070"
                         secureTextEntry={ true }
                         style={[
                             loginStyles.inputField,
@@ -85,7 +85,7 @@ export const LoginScreen = ({ navigation } : Props) => {
                             style={ loginStyles.button }
                             onPress={ onLogin }
                         >
-                            <Text style={ loginStyles.buttonText }>Login </Text>
+                            <Text style={ loginStyles.buttonText }>Entrar </Text>
                         </TouchableOpacity>
                     </View>
 

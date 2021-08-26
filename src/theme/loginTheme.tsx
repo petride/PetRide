@@ -21,11 +21,15 @@ export const loginStyles = StyleSheet.create({
         fontWeight: 'bold'
     },
     inputField: {
-        color: 'white',
-        fontSize: 20
+        color: '#707070',
+        fontSize: 20,
+        //backgroundColor: '#A6D8F6',
+        backgroundColor: 'white',
+        marginBottom: 20,
+        marginTop: 10
     },
     inputFieldIOS: {
-        borderBottomColor: 'white',
+        borderBottomColor: '#707070',
         borderBottomWidth: 2,
         paddingBottom: 4
     },
@@ -35,14 +39,15 @@ export const loginStyles = StyleSheet.create({
     },
     button: {
         borderWidth: 2,
-        borderColor: 'white',
+        borderColor: '#F8D93C',
         paddingHorizontal: 20,
         paddingVertical: 5,
-        borderRadius: 100
+        borderRadius: 5,
+        backgroundColor: '#F8D93C',
     },
     buttonText: {
         fontSize: 18,
-        color: 'white'
+        color: 'black'
     },
     newUserContainer: {
         alignItems: 'flex-end',
@@ -53,7 +58,7 @@ export const loginStyles = StyleSheet.create({
         top: 50,
         left: 20,
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: '#F8D93C',
         paddingHorizontal: 10,
         paddingVertical: 5,
         borderRadius: 100

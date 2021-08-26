@@ -33,14 +33,14 @@ export const RegisterScreen = ({ navigation } : Props ) => {
                     {/** Keyboard avoid view */}
                     <WhiteLogo/> 
 
-                    <Text style={ loginStyles.title }>Registro</Text>
+                    {/*<Text style={ loginStyles.title }>Registro</Text>
 
-                    <Text style={ loginStyles.label }>Nombre</Text>
+                    <Text style={ loginStyles.label }>Nombre</Text>*/}
 
                     <TextInput
                         placeholder="Nombre"
-                        placeholderTextColor="rgba(255,255,255,0.4)"
-                        underlineColorAndroid="white"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
                         style={[
                             loginStyles.inputField,
                             ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
@@ -53,13 +53,59 @@ export const RegisterScreen = ({ navigation } : Props ) => {
                         autoCorrect={ false }
                     />
 
-                    <Text style={ loginStyles.label }>Email</Text>
+                    {/*<TextInput
+                        placeholder="Apellido Paterno"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Apellido Materno"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Fecha Nacimiento"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="none"
+                        autoCorrect={ false }
+                    />*/}
 
                     <TextInput
                         placeholder="Correo"
-                        placeholderTextColor="rgba(255,255,255,0.4)"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
                         keyboardType="email-address"
-                        underlineColorAndroid="white"
+                        underlineColorAndroid="#707070"
                         style={[
                             loginStyles.inputField,
                             ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
@@ -73,12 +119,10 @@ export const RegisterScreen = ({ navigation } : Props ) => {
                         autoCorrect={ false }
                     />
 
-                    <Text style={ loginStyles.label }>Contraseña</Text>
-
                     <TextInput
                         placeholder="Contraseña"
-                        placeholderTextColor="rgba(255,255,255,0.4)"
-                        underlineColorAndroid="white"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
                         secureTextEntry={ true }
                         style={[
                             loginStyles.inputField,
@@ -92,6 +136,438 @@ export const RegisterScreen = ({ navigation } : Props ) => {
                         autoCapitalize="none"
                         autoCorrect={ false }
                     />
+
+                    {/*<TextInput
+                        placeholder="Sexo"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Domicilio"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Colonia"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Codigo Postal"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Estado"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Celular"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Estado Civil"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Nivel de Estudios"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Situacion Laboral"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Foto Identificacion"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Foto Seguro Cobertura"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Foto Constancia Fiscal"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Foto Perfil"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="No Cuenta"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="CLABE"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="CER"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="KEY"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Password"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Tipo Automovil"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Placas"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Color Automovil"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Poliza Seguro"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Vigencia Seguro"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Licencia Conducir"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Vigencia Licencia"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Tipo Transportadora"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />
+
+                    <TextInput
+                        placeholder="Placas Transportadora"
+                        placeholderTextColor="rgba(72,72,72,0.4)"
+                        underlineColorAndroid="#707070"
+                        style={[
+                            loginStyles.inputField,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
+                        ]}
+                        selectionColor="white"
+                        onChangeText={ (value) => onChange( value, 'name') }
+                        value={ name }
+                        onSubmitEditing={ onRegister }
+                        autoCapitalize="words"
+                        autoCorrect={ false }
+                    />*/}
 
                     {/* Boton login */}
 
