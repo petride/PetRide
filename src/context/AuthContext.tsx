@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import petrideApi from '../api/petrideApi';
 
-import { Usuario, LoginResponse, LoginData } from '../interfaces/appInterfaces';
+import { Usuario, LoginResponse, LoginData, RegisterData } from '../interfaces/appInterfaces';
 import { authReducer, AuthState } from './AuthReducer';
 import { useEffect } from 'react';
 
@@ -12,7 +12,7 @@ type AuthContextProps = {
     token: string | null;
     user: Usuario | null;
     status: 'checking' | 'authenticated' | 'no-authenticated';
-    signUp: () => void;
+    signUp: ( registerData: RegisterData ) => void;
     signIn: ( loginData: LoginData ) => void;
     logOut: () => void;
     removeError: () => void;
@@ -92,7 +92,27 @@ export const AuthProvider = ({ children}: any) => {
         });
     }
 
-    const signUp = () => {}
+    const signUp = async( { nombre, correo, password }: RegisterData ) => {
+        try {
+
+            const { data } = await petrideApi.post<LoginResponse> ('/usuarios', { nombre, correo, password } );
+            dispatch({
+                type: 'signUp',
+                payload: {
+                    token: data.token,
+                    user: data.usuario
+                }
+            });
+
+            await AsyncStorage.setItem('token', data.token);
+            
+        } catch (error) {
+            dispatch({
+                type: 'addError',
+                payload: error.response.data.errors[0].msg || 'Revise su información'
+            });
+        }
+    }
     
     
 
