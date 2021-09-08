@@ -108,35 +108,28 @@ export const LoginScreen = ({ navigation } : Props) => {
                         </TouchableOpacity>
                     </View>
 
-                    {/* Olvide contraseña */}
-                        <View style={ loginStyles.toolsUserContainer }>
+                    
+                    <View style={ loginStyles.toolsUserContainer }>
+                        {/* Olvide contraseña */}
                         <TouchableOpacity
-                                activeOpacity={ 0.8 }
-                                onPress={ () => navigation.replace('ForgotScreen') }
-                            >
-                                <Text style={ loginStyles.textToolsUserContainer }>¿Olvidaste tu contraseña?</Text>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity
-                                activeOpacity={ 0.8 }
-                                onPress={ () => navigation.replace('RegisterScreen') }
-                                style={{ marginTop: 10 }}
-                            >
-                                <Text style={ loginStyles.textToolsUserContainer }>¿No tienes una cuenta? Registrate Aquí</Text>
-                            </TouchableOpacity>
-                        </View>
-                
-
-                    {/* Crear una nueva cuenta */}
-                    {/*<View style={ loginStyles.newUserContainer }>
-                    <TouchableOpacity
                             activeOpacity={ 0.8 }
-                            onPress={ () => navigation.replace('RegisterScreen') }
+                            //onPress={ () => navigation.replace('ForgotScreen') }
+                            onPress={ () => navigation.navigate('ForgotScreen') }
                         >
-                            <Text style={ loginStyles.buttonText }>Nueva Cuenta </Text>
+                            <Text style={ loginStyles.textToolsUserContainer }>¿Olvidaste tu contraseña?</Text>
                         </TouchableOpacity>
-                    </View>*/}
+
+                        {/* Crear una nueva cuenta */}
+                        <TouchableOpacity
+                            activeOpacity={ 0.8 }
+                            onPress={ () => navigation.navigate('RegisterScreen') }
+                            style={{ marginTop: 10 }}
+                        >
+                            <Text style={ loginStyles.textToolsUserContainer }>¿No tienes una cuenta? Registrate Aquí</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
+                
             </KeyboardAvoidingView>
         </>
     )

@@ -9,11 +9,25 @@ export const loginStyles = StyleSheet.create({
         height: 600,
         marginBottom: 50
     },
-    title: {
-        color: 'white',
-        fontSize: 30,
+    formForgotContainer: {
+        flex: 1,
+        paddingHorizontal: 30,
+        justifyContent: 'center',
+        height: 600,
+        marginBottom: 350
+    },
+    imageForgotContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: 170,
+        marginLeft: 20
+    },
+    titleForgotPassword: {
+        color: 'black',
+        fontSize: 35,
         fontWeight: 'bold',
-        marginTop: 20
+        marginLeft: 30
     },
     label: {
         marginTop: 25,
@@ -22,11 +36,11 @@ export const loginStyles = StyleSheet.create({
     },
     inputField: {
         color: '#707070',
-        fontSize: 30,
+        fontSize: 25,
         borderRadius: 100,
         backgroundColor: '#A6D8F6',
         //backgroundColor: 'white',
-        marginBottom: 20,
+        marginBottom: 10,
         marginTop: 10
     },
     inputFieldIOS: {
@@ -67,6 +81,12 @@ export const loginStyles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 5,
         borderRadius: 100
-    }
+    },
+    shadowProp: {
+        shadowColor: '#171717',
+        shadowOffset: {width: -2, height: 4},
+        shadowOpacity: 0.4,
+        shadowRadius: 3,
+      },
 
 });
