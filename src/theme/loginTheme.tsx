@@ -22,9 +22,10 @@ export const loginStyles = StyleSheet.create({
     },
     inputField: {
         color: '#707070',
-        fontSize: 20,
-        //backgroundColor: '#A6D8F6',
-        backgroundColor: 'white',
+        fontSize: 30,
+        borderRadius: 100,
+        backgroundColor: '#A6D8F6',
+        //backgroundColor: 'white',
         marginBottom: 20,
         marginTop: 10
     },
@@ -47,11 +48,15 @@ export const loginStyles = StyleSheet.create({
     },
     buttonText: {
         fontSize: 18,
-        color: 'black'
+        color: '#484848'
     },
-    newUserContainer: {
-        alignItems: 'flex-end',
-        marginTop:10,
+    toolsUserContainer: {
+        alignItems: 'center',
+        marginTop:20,
+    },
+    textToolsUserContainer: {
+        fontSize: 18,
+        color: 'blue'
     },
     buttonReturnLogin: {
         position: 'absolute',

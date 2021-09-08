@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, View } from 'react-native';
 
-export const WhiteLogo = () => {
+export const WhiteLogoForgot = () => {
     return (
         <View 
             style={{
@@ -11,9 +11,8 @@ export const WhiteLogo = () => {
             <Image
                 source={ require('../assets/logo_petride.png') }
                 style={{
-                    width: 230,
-                    height: 230,
-                    marginBottom: 20
+                    width: 300,
+                    height: 300 
                 }}
             />
             

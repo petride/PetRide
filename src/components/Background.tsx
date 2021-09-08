@@ -6,19 +6,20 @@ export const Background = () => {
         <View
             style={{
                 position: 'absolute',
-                backgroundColor: '#A6D8F6',
+                //backgroundColor: '#A6D8F6',
+                backgroundColor: '#FFF',
                 width: 1000,
                 height: 1200
             }}
         >
-            <ImageBackground 
+            {/*<ImageBackground 
                 source={ require('../assets/huellas1.png') }
                 resizeMode="cover"
                 style={{
                     flex: 1,
                     justifyContent: "center"
                 }}
-            />
+            />*/}
             
         </View>
     )

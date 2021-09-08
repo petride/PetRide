@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Text, View, TextInput, Platform, TouchableOpacity, KeyboardAvoidingView, Keyboard, Alert } from 'react-native'
 
 import { Background } from '../components/Background'
-import { WhiteLogo } from '../components/WhiteLogo'
+import { WhiteLogoForgot } from '../components/WhiteLogoForgot';
 import { loginStyles } from '../theme/loginTheme';
 import { useForm } from '../hooks/useForm';
 import { StackScreenProps } from '@react-navigation/stack';
@@ -11,7 +11,7 @@ import { AuthContext } from '../context/AuthContext';
 
 interface Props extends StackScreenProps<any, any> {}
 
-export const LoginScreen = ({ navigation } : Props) => {
+export const ForgotScreen = ({ navigation } : Props) => {
 
     const { signIn, errorMessage, removeError } = useContext( AuthContext );
 
@@ -54,9 +54,9 @@ export const LoginScreen = ({ navigation } : Props) => {
 
                 <View style={ loginStyles.formLoginContainer }>
                     {/** Keyboard avoid view */}
-                    <WhiteLogo/> 
+                    <WhiteLogoForgot/> 
 
-                    {/*<Text style={ loginStyles.title }>Login</Text>
+                    {/*<Text style={ loginStyles.title }>Forgot</Text>
 
                     <Text style={ loginStyles.label }>Email</Text>*/}
 
@@ -64,12 +64,13 @@ export const LoginScreen = ({ navigation } : Props) => {
                         placeholder="Correo"
                         placeholderTextColor="rgba(72,72,72,0.4)"
                         keyboardType="email-address"
-                        //underlineColorAndroid="#707070"
+                        underlineColorAndroid="#707070"
                         style={[
                             loginStyles.inputField,
-                            //( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS,
+                            ( Platform.OS == 'ios' ) && loginStyles.inputFieldIOS
                         ]}
                         selectionColor="white"
+
                         onChangeText={ (value) => onChange( value, 'email') }
                         value={ email }
                         onSubmitEditing={ onLogin }
@@ -82,13 +83,14 @@ export const LoginScreen = ({ navigation } : Props) => {
                     <TextInput
                         placeholder="Contraseña"
                         placeholderTextColor="rgba(112,112,112,0.4)"
-                        //underlineColorAndroid="#707070"
+                        underlineColorAndroid="#707070"
                         secureTextEntry={ true }
                         style={[
                             loginStyles.inputField,
-                            //( Platform.OS === 'ios' ) && loginStyles.inputFieldIOS
+                            ( Platform.OS === 'ios' ) && loginStyles.inputFieldIOS
                         ]}
                         selectionColor="white"
+
                         onChangeText={ (value) => onChange( value, 'password') }
                         value={ password }
                         onSubmitEditing={ onLogin }
@@ -104,38 +106,11 @@ export const LoginScreen = ({ navigation } : Props) => {
                             style={ loginStyles.button }
                             onPress={ onLogin }
                         >
-                            <Text style={ loginStyles.buttonText }>Iniciar Sesión </Text>
+                            <Text style={ loginStyles.buttonText }>Entrar </Text>
                         </TouchableOpacity>
                     </View>
 
-                    {/* Olvide contraseña */}
-                        <View style={ loginStyles.toolsUserContainer }>
-                        <TouchableOpacity
-                                activeOpacity={ 0.8 }
-                                onPress={ () => navigation.replace('ForgotScreen') }
-                            >
-                                <Text style={ loginStyles.textToolsUserContainer }>¿Olvidaste tu contraseña?</Text>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity
-                                activeOpacity={ 0.8 }
-                                onPress={ () => navigation.replace('RegisterScreen') }
-                                style={{ marginTop: 10 }}
-                            >
-                                <Text style={ loginStyles.textToolsUserContainer }>¿No tienes una cuenta? Registrate Aquí</Text>
-                            </TouchableOpacity>
-                        </View>
-                
-
-                    {/* Crear una nueva cuenta */}
-                    {/*<View style={ loginStyles.newUserContainer }>
-                    <TouchableOpacity
-                            activeOpacity={ 0.8 }
-                            onPress={ () => navigation.replace('RegisterScreen') }
-                        >
-                            <Text style={ loginStyles.buttonText }>Nueva Cuenta </Text>
-                        </TouchableOpacity>
-                    </View>*/}
+                    
                 </View>
             </KeyboardAvoidingView>
         </>
