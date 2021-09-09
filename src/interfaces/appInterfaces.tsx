@@ -23,3 +23,8 @@ export interface Usuario {
     uid:    string;
     img?:   string;
 }
+
+export interface Location {
+    latitude: number;
+    longitud: number;
+}
