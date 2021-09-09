@@ -1,11 +1,10 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import petrideApi from '../api/petrideApi';
 
 import { Usuario, LoginResponse, LoginData, RegisterData } from '../interfaces/appInterfaces';
 import { authReducer, AuthState } from './AuthReducer';
-import { useEffect } from 'react';
 
 type AuthContextProps = {
     errorMessage: string;

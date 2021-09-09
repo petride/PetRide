@@ -8,14 +8,20 @@ import { RegisterScreen } from '../screens/RegisterScreen';
 import { ProtectedScreen } from '../screens/ProtectedScreen';
 import { LoadingScreen } from '../screens/LoadingScreen';
 import { ForgotScreen } from '../screens/ForgotScreen';
+import { PermissionsScreen } from '../screens/PermissionsScreen';
+import { MapScreen } from '../screens/MapScreen';
+import { PermissionsContext } from '../context/PermissionsContext';
 
 const Stack = createStackNavigator();
 
 export const Navigator = () => {
 
   const { status } = useContext( AuthContext );
+  const { permissions } = useContext( PermissionsContext);
 
   if( status === 'checking' ) return <LoadingScreen/>
+
+  if( permissions.locationStatus === 'unavailable' ) return <LoadingScreen />
 
   return (
     <Stack.Navigator
@@ -37,7 +43,14 @@ export const Navigator = () => {
             </>
         )
         : (
-          <Stack.Screen name="ProtectedScreen" component={ ProtectedScreen } />
+          <>
+          {/*<Stack.Screen name="ProtectedScreen" component={ ProtectedScreen } />*/}
+          {
+            (permissions.locationStatus === 'granted')
+              ? <Stack.Screen name="MapScreen" component={ MapScreen } />
+              : <Stack.Screen name="PermissionsScreen" component={ PermissionsScreen } />
+          }
+          </>
         ) 
     }
     </Stack.Navigator>
