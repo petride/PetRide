@@ -3,7 +3,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { Text, View } from 'react-native';
 
 
-export const Test = () => {
+export const Test = ( props:any ) => {
+
+
+    //console.log('PROPS HOME: ', props)
+
     return (
         <View>
             <Text>

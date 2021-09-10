@@ -12,6 +12,7 @@ import { PermissionsScreen } from '../screens/PermissionsScreen';
 import { MapScreen } from '../screens/MapScreen';
 import { PermissionsContext } from '../context/PermissionsContext';
 import { Test } from '../screens/Test';
+import { DrawerPrincipal } from './DrawerPrincipal';
 
 const Stack = createStackNavigator();
 
@@ -45,12 +46,13 @@ export const Navigator = () => {
         )
         : (
           <>
+          <Stack.Screen name="drawerLogged" component={DrawerPrincipal} />
           {/*<Stack.Screen name="ProtectedScreen" component={ ProtectedScreen } />*/}
-          {
+          {/*{
             (permissions.locationStatus === 'granted')
               ? <Stack.Screen name="MapScreen" component={ Test } />
               : <Stack.Screen name="PermissionsScreen" component={ PermissionsScreen } />
-          }
+          }*/}
           </>
         ) 
     }
