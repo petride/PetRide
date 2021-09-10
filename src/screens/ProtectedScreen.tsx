@@ -3,7 +3,7 @@ import { Button, StyleSheet } from 'react-native'
 import { Text, View } from 'react-native'
 import { AuthContext } from '../context/AuthContext';
 
-export const ProtectedScreen = () => {
+export const ProtectedScreen  = ( props:any ) => {
 
     const { user, token, logOut } = useContext(AuthContext);
     return (

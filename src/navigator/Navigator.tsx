@@ -5,13 +5,9 @@ import { AuthContext } from '../context/AuthContext';
 
 import { LoginScreen } from '../screens/LoginScreen';
 import { RegisterScreen } from '../screens/RegisterScreen';
-import { ProtectedScreen } from '../screens/ProtectedScreen';
 import { LoadingScreen } from '../screens/LoadingScreen';
 import { ForgotScreen } from '../screens/ForgotScreen';
-import { PermissionsScreen } from '../screens/PermissionsScreen';
-import { MapScreen } from '../screens/MapScreen';
 import { PermissionsContext } from '../context/PermissionsContext';
-import { Test } from '../screens/Test';
 import { DrawerPrincipal } from './DrawerPrincipal';
 
 const Stack = createStackNavigator();
@@ -19,11 +15,8 @@ const Stack = createStackNavigator();
 export const Navigator = () => {
 
   const { status } = useContext( AuthContext );
-  const { permissions } = useContext( PermissionsContext);
 
   if( status === 'checking' ) return <LoadingScreen/>
-
-  if( permissions.locationStatus === 'unavailable' ) return <LoadingScreen />
 
   return (
     <Stack.Navigator
@@ -46,13 +39,7 @@ export const Navigator = () => {
         )
         : (
           <>
-          <Stack.Screen name="drawerLogged" component={DrawerPrincipal} />
-          {/*<Stack.Screen name="ProtectedScreen" component={ ProtectedScreen } />*/}
-          {/*{
-            (permissions.locationStatus === 'granted')
-              ? <Stack.Screen name="MapScreen" component={ Test } />
-              : <Stack.Screen name="PermissionsScreen" component={ PermissionsScreen } />
-          }*/}
+            <Stack.Screen name="drawerLogged" component={DrawerPrincipal} />
           </>
         ) 
     }

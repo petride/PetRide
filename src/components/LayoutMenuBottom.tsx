@@ -2,6 +2,7 @@ import { DrawerScreenProps } from '@react-navigation/drawer';
 import React from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { bottomMenuStyles } from '../theme/bottomMenuTheme';
 
 
 interface Props extends DrawerScreenProps<any, any>{}
@@ -14,20 +15,19 @@ export const LayoutMenuBottom = (props:Props) => {
 
     const {ComponentToRender} = props.route.params as RouteParams
 
-    console.log('PROPS DRAWER: ', props)
     return (
         <View style={{flex:1}}>
-            <View style={styles.childrenComponentContainer}>
+            <View style={bottomMenuStyles.childrenComponentContainer}>
                 <ComponentToRender propsDrawer={props}/>
             </View>
-            <View style={styles.userButtonBottomMenuContainer}> 
+            <View style={bottomMenuStyles.userButtonBottomMenuContainer}> 
                 <Image
-                    style={styles.imageUserMenuBottom} 
+                    style={bottomMenuStyles.imageUserMenuBottom} 
                     source={require('../assets/Avatar.png')}
                 />
             </View>
             
-            <View style={styles.menuBottomContainer}>
+            <View style={bottomMenuStyles.menuBottomContainer}>
                 <TouchableOpacity onPress={props.navigation.openDrawer}>
                     <Text> <Icon name='menu' size={45} color='white' /> </Text>
                 </TouchableOpacity>
@@ -39,39 +39,5 @@ export const LayoutMenuBottom = (props:Props) => {
 
             
         </View>
-    )
+    );
 }
-
-const styles = StyleSheet.create({
-    childrenComponentContainer:{
-        flex:1
-    },
-
-    menuBottomContainer:{
-        height:50,
-        backgroundColor:'#006FB2',
-        flexDirection:'row',
-        justifyContent:'space-between'
-    },
-
-
-
-    userButtonBottomMenuContainer:{
-        width:90,
-        height:90,
-        borderRadius:90,
-        backgroundColor:'white',
-        zIndex:10,
-        position:'absolute',
-        bottom:0,
-        alignSelf:'center',
-        alignItems:'center',
-        justifyContent:'center'
-        
-    },
-
-    imageUserMenuBottom:{
-        width:60,
-        height:60
-    },
-})
