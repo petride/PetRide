@@ -11,6 +11,7 @@ import { ForgotScreen } from '../screens/ForgotScreen';
 import { PermissionsScreen } from '../screens/PermissionsScreen';
 import { MapScreen } from '../screens/MapScreen';
 import { PermissionsContext } from '../context/PermissionsContext';
+import { Test } from '../screens/Test';
 
 const Stack = createStackNavigator();
 
@@ -47,7 +48,7 @@ export const Navigator = () => {
           {/*<Stack.Screen name="ProtectedScreen" component={ ProtectedScreen } />*/}
           {
             (permissions.locationStatus === 'granted')
-              ? <Stack.Screen name="MapScreen" component={ MapScreen } />
+              ? <Stack.Screen name="MapScreen" component={ Test } />
               : <Stack.Screen name="PermissionsScreen" component={ PermissionsScreen } />
           }
           </>
