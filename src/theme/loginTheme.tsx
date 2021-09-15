@@ -87,6 +87,6 @@ export const loginStyles = StyleSheet.create({
         shadowOffset: {width: -2, height: 4},
         shadowOpacity: 0.4,
         shadowRadius: 3,
-      },
+    },
 
 });
