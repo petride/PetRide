@@ -1,18 +1,17 @@
-import React, { useContext }  from 'react'
-import { Text, View, Modal, Button, Image, TouchableOpacity } from 'react-native';
+import React, {  useContext, useState }  from 'react'
+import { Text, View, Modal, Image, TouchableOpacity } from 'react-native';
 
 
 import { permissionsStyles } from '../theme/permissionsTheme';
 import { PermissionsContext } from '../context/PermissionsContext';
 import { PermissionButton } from '../components/PermissionButton';
-import { bottomMenuStyles } from '../theme/bottomMenuTheme';
 import { ModalStyles } from '../theme/modalTheme';
-import { Background } from '../components/Background';
-import { loginStyles } from '../theme/loginTheme';
+import { ModalComponent } from '../components/Modal';
 
 export const PermissionsScreen = () => {
 
     const { permissions, askLocationPermission } = useContext( PermissionsContext );
+    const [show, setShow] = useState(false);
 
     return (
         <View style={
@@ -24,21 +23,19 @@ export const PermissionsScreen = () => {
                 Es necesario dar algunos permisos para usar esta aplicación
             </Text>
 
-            <Button
-                title="Show"
-                action={() => {
-
-                }}
-            >
-
-            </Button>
+            <PermissionButton
+                title="Permiso"
+                onPress={ () => {
+                    setShow(true);
+                }} 
+            />
 
             <Modal
                 animationType="slide"
                 onDismiss={() => console.log('Close Modal')}
                 onShow={() => console.log('Show Modal')}
                 transparent
-                visible={true}
+                visible={show}
             >
                 <View
                     style={[
@@ -83,7 +80,9 @@ export const PermissionsScreen = () => {
                                 <TouchableOpacity
                                     activeOpacity={ 0.8 }
                                     style={ ModalStyles.buttonRedModal }
-                                    
+                                    onPress= { () => {
+                                        setShow(false);
+                                    }}
                                 >
                                     <Text style={ ModalStyles.buttonRedText }>No permitir</Text>
                                 </TouchableOpacity>
@@ -96,7 +95,7 @@ export const PermissionsScreen = () => {
                                 <TouchableOpacity
                                     activeOpacity={ 0.8 }
                                     style={ ModalStyles.buttonBlueModal }
-                                    
+                                    onPress={ askLocationPermission }
                                 >
                                     <Text style={ ModalStyles.buttonBlueText }>Permitir</Text>
                                 </TouchableOpacity>
@@ -105,7 +104,8 @@ export const PermissionsScreen = () => {
                     
                 </View>
 
-            </Modal>
+        </Modal>
+            
 
             {/*<PermissionButton
                 title="Permiso"

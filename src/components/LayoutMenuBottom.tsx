@@ -20,11 +20,15 @@ export const LayoutMenuBottom = (props:Props) => {
             <View style={bottomMenuStyles.childrenComponentContainer}>
                 <ComponentToRender propsDrawer={props}/>
             </View>
-            <View style={bottomMenuStyles.userButtonBottomMenuContainer}> 
-                <Image
-                    style={bottomMenuStyles.imageUserMenuBottom} 
-                    source={require('../assets/Avatar.png')}
-                />
+            <View style={bottomMenuStyles.userButtonBottomMenuContainer}>
+                <TouchableOpacity
+                    onPress={ () => props.navigation.navigate('MapScreen') }  
+                >
+                    <Image
+                        style={bottomMenuStyles.imageUserMenuBottom} 
+                        source={require('../assets/Avatar.png')}
+                    />
+                </TouchableOpacity>
             </View>
             
             <View style={bottomMenuStyles.menuBottomContainer}>
