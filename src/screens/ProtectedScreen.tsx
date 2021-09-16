@@ -1,28 +1,77 @@
-import React, { useContext } from 'react'
-import { Button, StyleSheet } from 'react-native'
+import React, { useContext, useState } from 'react'
+import { Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, View } from 'react-native'
+import { ModalPermission } from '../components/ModalPermission';
+import { PermissionButton } from '../components/PermissionButton';
 import { AuthContext } from '../context/AuthContext';
+import { ModalStyles } from '../theme/modalTheme';
+import { permissionsStyles } from '../theme/permissionsTheme';
 
 export const ProtectedScreen  = ( props:any ) => {
 
     const { user, token, logOut } = useContext(AuthContext);
-    return (
-        <View style={ styles.container}>
-            <Text style={ styles.title}> Protected Screen</Text>
+    const [show, setShow] = useState(false);
 
-            <Button
-                title="logout"
-                color="#F8D93C"
-                onPress={ logOut }
+    return (
+        <View style={
+            permissionsStyles.container
+        }>
+            {/*<Text style={
+                permissionsStyles.title
+            }>
+                Es necesario dar algunos permisos para usar esta aplicación
+        </Text>*/}
+
+            <PermissionButton
+                title="Cerrar Sesión"
+                onPress={ () => {
+                    setShow(true);
+                }} 
             />
 
-            <Text>
-                { JSON.stringify( user, null, 5 ) }
-            </Text>
-            <Text>
-                { token }
-            </Text>
+            <ModalPermission
+                visible = { show}
+                onClose = { () => setShow(false) }
+                title = 'Salir'
+                description = '¿Estás seguro que quieres salir?'
+                imageURL = 'logout'
+            >
+                <View
+                    style={[
+                        ModalStyles.bottomButtonModalContainer
+                    ]}
+                >
+                    <View
+                    style={[
+                            ModalStyles.buttonModalContainer
+                        ]}
+                    >
+                        <TouchableOpacity
+                            activeOpacity={ 0.8 }
+                            style={ ModalStyles.buttonRedModal }
+                            onPress= { () => setShow(false) }
+                        >
+                            <Text style={ ModalStyles.buttonRedText }>Cancelar</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View
+                        style={[
+                            ModalStyles.buttonModalContainer
+                        ]}
+                    >
+                        <TouchableOpacity
+                            activeOpacity={ 0.8 }
+                            style={ ModalStyles.buttonBlueModal }
+                            onPress={ logOut }
+                        >
+                            <Text style={ ModalStyles.buttonBlueText }>Si</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </ModalPermission>
         </View>
+        
+        
     )
 }
 

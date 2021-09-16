@@ -6,7 +6,7 @@ import { permissionsStyles } from '../theme/permissionsTheme';
 import { PermissionsContext } from '../context/PermissionsContext';
 import { PermissionButton } from '../components/PermissionButton';
 import { ModalStyles } from '../theme/modalTheme';
-import { ModalComponent } from '../components/Modal';
+import { ModalPermission } from '../components/ModalPermission';
 
 export const PermissionsScreen = () => {
 
@@ -30,91 +30,45 @@ export const PermissionsScreen = () => {
                 }} 
             />
 
-            <Modal
-                animationType="slide"
-                onDismiss={() => console.log('Close Modal')}
-                onShow={() => console.log('Show Modal')}
-                transparent
-                visible={show}
+            <ModalPermission
+                visible = { show}
+                onClose = { () => setShow(false) }
+                description = 'Es necesario el uso del GPS para utilizar esta aplicación.'
+                imageURL = 'gps'
             >
                 <View
                     style={[
-                        ModalStyles.backgroundModal
+                        ModalStyles.bottomButtonModalContainer
                     ]}
                 >
                     <View
-                        style={[
-                            ModalStyles.viewModal
+                    style={[
+                            ModalStyles.buttonModalContainer
                         ]}
                     >
-                        <View
-                            style={[
-                                ModalStyles.iconModalContainer
-                            ]
-                            
-                        }
+                        <TouchableOpacity
+                            activeOpacity={ 0.8 }
+                            style={ ModalStyles.buttonRedModal }
+                            onPress= { () => setShow(false) }
                         >
-                            <Image
-                                style={ModalStyles.imageIcon} 
-                                source={require('../assets/icon_gps_permission.png')}
-                            />
-                        </View>
-
-                        <Text style={[
-                            ModalStyles.title
-                        ]}>
-                            Es necesario el uso del GPS para utilizar esta aplicación
-                        </Text>
+                            <Text style={ ModalStyles.buttonRedText }>No permitir</Text>
+                        </TouchableOpacity>
                     </View>
-
                     <View
                         style={[
-                            ModalStyles.bottomButtonModalContainer
+                            ModalStyles.buttonModalContainer
                         ]}
+                    >
+                        <TouchableOpacity
+                            activeOpacity={ 0.8 }
+                            style={ ModalStyles.buttonBlueModal }
+                            onPress={ askLocationPermission }
                         >
-                            <View
-                                style={[
-                                    ModalStyles.buttonModalContainer
-                                ]}
-                            >
-                                <TouchableOpacity
-                                    activeOpacity={ 0.8 }
-                                    style={ ModalStyles.buttonRedModal }
-                                    onPress= { () => {
-                                        setShow(false);
-                                    }}
-                                >
-                                    <Text style={ ModalStyles.buttonRedText }>No permitir</Text>
-                                </TouchableOpacity>
-                            </View>
-                            <View
-                                style={[
-                                    ModalStyles.buttonModalContainer
-                                ]}
-                            >
-                                <TouchableOpacity
-                                    activeOpacity={ 0.8 }
-                                    style={ ModalStyles.buttonBlueModal }
-                                    onPress={ askLocationPermission }
-                                >
-                                    <Text style={ ModalStyles.buttonBlueText }>Permitir</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    
+                            <Text style={ ModalStyles.buttonBlueText }>Permitir</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-
-        </Modal>
-            
-
-            {/*<PermissionButton
-                title="Permiso"
-                onPress={ askLocationPermission } 
-            />*/}
-
-            {/*<Text>
-                { JSON.stringify( permissions, null, 5 ) }
-            </Text>*/}
+            </ModalPermission>
         </View>
     )
 }

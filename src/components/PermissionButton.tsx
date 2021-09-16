@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleProp, Text, TouchableOpacity, ViewStyle, StyleSheet } from 'react-native';
+import { permissionsStyles } from '../theme/permissionsTheme';
 
 interface Props {
     title: string;
@@ -14,32 +15,10 @@ export const PermissionButton = ( { title, onPress, style = {} }: Props ) => {
             activeOpacity={ 0.9 }
             style ={{
                 ...style as any,
-                ...styles.blackButton
+                ...permissionsStyles.blackButton
             }}
         >
-            <Text style={ styles.buttonText }> { title } </Text>
+            <Text style={ permissionsStyles.buttonText }> { title } </Text>
         </TouchableOpacity>
     )
 }
-
-const styles = StyleSheet.create({
-    blackButton: {
-        height: 45,
-        width: 200,
-        backgroundColor: 'black',
-        borderRadius: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 3
-        },
-        shadowOpacity: 0.27,
-        elevation: 6
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 18
-    }
-})

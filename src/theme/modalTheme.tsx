@@ -36,6 +36,12 @@ export const ModalStyles = StyleSheet.create({
     },
     title: {
         width: 250,
+        fontSize: 20,
+        textAlign: 'center',
+        fontWeight: "bold"
+    },
+    description: {
+        width: 250,
         fontSize: 18,
         textAlign: 'center',
         marginBottom: 20
