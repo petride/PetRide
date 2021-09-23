@@ -8,12 +8,34 @@ import { FabMap } from './FabMap';
 
 export const Maps = () => {
 
-    const { hasLocation, initialPosition, getCurrentLocation } =  useLocation();
+    const { hasLocation, initialPosition, getCurrentLocation, followUserLocation, userLocation, stopFollowUserLocation } =  useLocation();
     const mapViewRef = useRef<MapView>();
+    const following = useRef<boolean>(true);
+
+    useEffect(() => {
+        followUserLocation();
+        return () => {
+            //TODO: Cancelar el seguimiento
+            stopFollowUserLocation();
+        }
+    }, [])
+
+    useEffect(() => {
+
+        if( !following.current ) return;
+
+        const { latitude, longitude } = userLocation;
+
+        mapViewRef.current?.animateCamera({
+            center: { latitude, longitude }
+        });
+    }, [ userLocation ])
 
     const centerPosition = async() => {
 
         const { latitude, longitude } = await getCurrentLocation();
+
+        following.current = true;
 
         mapViewRef.current?.animateCamera({
             center: { latitude, longitude }
@@ -37,6 +59,7 @@ export const Maps = () => {
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421,
                 }}
+                onTouchStart={ () => following.current = false }
             >
 
                 {/*<Marker
