@@ -87,4 +87,94 @@ export const ModalStyles = StyleSheet.create({
         fontSize: 18,
         color: 'black'
     },
+
+
+    viewModalNewTravel:{
+        height: '20%',
+        width: '90%',
+        backgroundColor: '#FFF',
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius: 10,
+        top: '28%'
+    },
+    titleContainerNewTravel:{
+        width:'100%',
+        height:50,
+        flexDirection: 'row',
+        backgroundColor:'#A6D8F6',
+        zIndex:10,
+        position:'absolute',
+        top: -30,
+        alignSelf:'center',
+        alignItems:'center',
+        justifyContent:'center',
+        borderTopStartRadius: 10,
+        borderTopEndRadius: 10
+    },
+    titleNewTravel: {
+        width: 250,
+        fontSize: 30,
+        textAlign: 'center',
+        //fontWeight: "bold",
+        color: 'white'
+    },
+    contentDescriptionNewTravel: {
+        flex:1,
+        width: '100%',
+        flexDirection: 'row',
+        backgroundColor: "white",
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    contentDescriptionNewTravelLeft: {
+        width: '60%',
+        backgroundColor: 'white',
+        alignContent: 'center',
+        alignItems: 'center'
+    },
+    contentDescriptionNewTravelRight: {
+        width: '40%',
+        backgroundColor: 'white',
+        alignContent: 'center',
+        alignItems: 'center'
+    },
+    bottomTravelButtonModalContainer:{
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        borderRadius: 10,
+    },
+    buttonRedTravelModal:{
+        marginTop: 10,
+        borderWidth: 2,
+        borderColor: 'red',
+        paddingHorizontal: 10,
+        paddingVertical: 2,
+        borderRadius: 5,
+        backgroundColor: 'red',
+        alignContent: 'center',
+        alignItems: 'center'
+    },
+    buttonBlueTravelModal:{
+        marginTop: 20,
+        borderWidth: 2,
+        borderColor: '#A6D8F6',
+        paddingHorizontal: 10,
+        paddingVertical: 2,
+        borderRadius: 5,
+        backgroundColor: '#A6D8F6',
+        alignContent: 'center',
+        alignItems: 'center'
+    },
+    userTravel: {
+        width: 250,
+        fontSize: 18,
+        textAlign: 'center',
+    },
+    descriptionTravel: {
+        width: 250,
+        fontSize: 18,
+        textAlign: 'center',
+        marginBottom: 20
+    },
 });

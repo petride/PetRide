@@ -6,6 +6,7 @@ import { PermissionButton } from '../components/PermissionButton';
 import { AuthContext } from '../context/AuthContext';
 import { ModalStyles } from '../theme/modalTheme';
 import { permissionsStyles } from '../theme/permissionsTheme';
+import { ModalNewTravel } from '../components/ModalNewTravel';
 
 export const ProtectedScreen  = ( props:any ) => {
 
@@ -30,7 +31,7 @@ export const ProtectedScreen  = ( props:any ) => {
             />
 
             <ModalPermission
-                visible = { show}
+                visible = {show}
                 onClose = { () => setShow(false) }
                 title = 'Salir'
                 description = '¿Estás seguro que quieres salir?'
