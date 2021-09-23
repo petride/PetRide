@@ -6,7 +6,7 @@ import { ModalStyles } from '../theme/modalTheme';
 
 export const MapScreen = ( props:any ) => {
 
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
 
     return (
         <View style={{ flex: 1}}>
