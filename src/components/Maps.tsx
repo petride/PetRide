@@ -79,8 +79,8 @@ export const Maps = () => {
                 onPress={ centerPosition }
                 style= {{
                     position: 'absolute',
-                    bottom: 20,
-                    right: 20
+                    bottom: 21,
+                    right: 21
                 }}
             />
         </>
